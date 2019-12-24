@@ -1,0 +1,173 @@
+extends ../partials/base.pug
+
+block body
+  include ../partials/header.pug
+
+  section.section-about
+    .u-center-text.u-margin-bottom-big
+      h2.heading-secondary
+        | Exciting tours for adventurous people
+
+    .row
+      .col-1-of-2
+        h3.heading-tertiary.u-margin-bottom-small
+          | You will fall in love with nature
+        p.paragraph
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          | laboriosam delectus excepturi quibusdam rerum vitae dolor illum
+          | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
+          | obcaecati, asperiores sed temporibus!
+
+        h3.heading-tertiary.u-margin-bottom-small
+          | You will fall in love with nature
+        p.paragraph
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          | laboriosam delectus excepturi quibusdam rerum vitae dolor illum
+          | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
+          | obcaecati, asperiores sed temporibus!
+
+        a.btn-text(href="#") Learn more &rarr;
+
+      .col-1-of-2
+        .composition
+          img.composition__photo.composition__photo--p1(
+            src="../../assets/img/nat-1-large.jpg"
+            alt="Photo 1"
+          )
+          img.composition__photo.composition__photo--p2(
+            src="../../assets/img/nat-2-large.jpg"
+            alt="Photo 2"
+          )
+          img.composition__photo.composition__photo--p3(
+            src="../../assets/img/nat-3-large.jpg"
+            alt="Photo 3"
+          )
+
+  section.section-features
+    .row
+      .col-1-of-4
+        .feature-box
+          i.icon-basic-world.feature-box__icon
+          h3.heading-tertiary.u-margin-bottom-small Explore the world
+          p.feature-box__text
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Cumque, et! Quidem sunt explicabo mollitia.
+
+      .col-1-of-4
+        .feature-box
+          i.icon-basic-compass.feature-box__icon
+          h3.heading-tertiary.u-margin-bottom-small Meet Nature
+          p.feature-box__text
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Cumque, et! Quidem sunt explicabo mollitia.
+
+      .col-1-of-4
+        .feature-box
+          i.icon-basic-map.feature-box__icon
+          h3.heading-tertiary.u-margin-bottom-small Find Your Way
+          p.feature-box__text
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Cumque, et! Quidem sunt explicabo mollitia.
+
+      .col-1-of-4
+        .feature-box
+          i.icon-basic-heart.feature-box__icon
+          h3.heading-tertiary.u-margin-bottom-small Live a Healthier Life
+          p.feature-box__text
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            | Cumque, et! Quidem sunt explicabo mollitia.
+
+  section.section-tours
+    .u-center-text.u-margin-bottom-big
+      h2.heading-secondary Most Popular Tours
+    .row
+      .col-1-of-3
+        .card
+          .card__side.card__side--front
+            .card__picture.card__picture--1
+              | &nbsp;
+            h4.card__heading
+              span.card__heading-span.card__heading-span--1
+                | The Sea Explorer
+            .card__details
+              ul
+                li 3 day tours
+                li Up to 30 people
+                li 2 tour guides
+                li Sleep in cozy hotels
+                li Difficulty: Easy
+          .card__side.card__side--back.card__side--back-1
+            .card__cta
+              .card__price-box
+                .card__price-only Only
+                .card__price-value $297
+              a.btn.btn--white(href="#") Book Now
+
+      .col-1-of-3
+        .card
+          .card__side.card__side--front
+            .card__picture.card__picture--2
+              | &nbsp;
+            h4.card__heading
+              span.card__heading-span.card__heading-span--2
+                | The Forest Hiker
+            .card__details
+              ul
+                li 7 day tours
+                li Up to 40 people
+                li 6 tour guides
+                li Sleep in provided tents
+                li Difficulty: Medium
+          .card__side.card__side--back.card__side--back-2
+            .card__cta
+              .card__price-box
+                .card__price-only Only
+                .card__price-value $497
+              a.btn.btn--white(href="#") Book Now
+
+      .col-1-of-3
+        .card
+          .card__side.card__side--front
+            .card__picture.card__picture--3
+              | &nbsp;
+            h4.card__heading
+              span.card__heading-span.card__heading-span--3
+                | The Snow Adventurer
+            .card__details
+              ul
+                li 5 day tours
+                li Up to 15 people
+                li 3 tour guides
+                li Sleep in provided tents
+                li Difficulty: Hard
+          .card__side.card__side--back.card__side--back-3
+            .card__cta
+              .card__price-box
+                .card__price-only Only
+                .card__price-value $897
+              a.btn.btn--white(href="#") Book Now
+
+    .u-center-text.u-margin-top-huge
+      a.btn.btn--green(href="#") Discover all tours
+
+  section.section-stories
+    .u-center-text.u-margin-bottom-big
+      h2.heading-secondary We Make People Genuinely Happy
+
+    .row
+      .story
+        figure.story__shape
+          img.story__img(src="../../assets/img/nat-8.jpg", alt="Person on a tour")
+          figcaption.story__caption Mary Smith
+        .story__text
+          h3.heading-tertiary.u-margin-bottom-small I had the best week ever with my family
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            | laboriosam delectus excepturi quibusdam rerum vitae dolor illum
+            | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
+            | obcaecati, asperiores sed temporibus!
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+  //- include ../partials/grid.pug
+
+

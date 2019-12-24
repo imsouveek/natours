@@ -1,0 +1,89 @@
+.header {
+  height: 95vh;
+
+  /* Put overlapping gradient and image for a cool background */
+  background-image:
+    linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url('../img/hero.jpg');
+
+  /* Stretch to fill available space */
+  background-size: cover;
+
+  /* Align to top and crop bottom on viewport resize if required */
+  background-position: top;
+
+  /* Polygon style header */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  /* Use header as reference for all heading related settings */
+  position: relative;
+
+  /* Logo positioning */
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    z-index: 10;
+  }
+
+  /* Logo sizing */
+  &__logo {
+    height: 3.5rem;
+  }
+
+  /* Positioning for text box containing header text and button */
+  &__text-box {
+    position: absolute;
+    z-index: 10;
+
+    /*
+      Below two settings only set the position of the top left corner of
+      the text-box
+    */
+    top: 40%;
+    left: 50%;
+
+    /*
+      Shift text box to its left and top by 50% of its own size. This
+      has an effect similar to changing the anchor point of the text box
+      element
+    */
+    transform: translate(-50%, -50%);
+
+    /* Align content of text-box to center */
+    text-align: center;
+  }
+
+  /* Create a cool opacity effect on the header background */
+  &::after {
+    content: "";
+
+    /*
+      We can always break out the header background to have only image and
+      this background to have gradient with 0.8 opacity but then the animation
+      would not be generic
+    */
+    opacity: 0;
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+
+    /* Occupy full width and height of background */
+    width: 100%;
+    height: 100%;
+
+    /* Set position to match header background */
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* Set the animation */
+    animation: makeInvisible 1s ease-in;
+  }
+}

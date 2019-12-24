@@ -1,0 +1,111 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    font-size: $default-font-size;
+    display: inline-block;
+    border-radius: 40rem;
+
+    /* Enable animation on hover and active */
+    transition: all 0.2s;
+
+    /* This is reference for all button-related positioning */
+    position: relative;
+  }
+
+  &:hover{
+    /* Define animation on hover of original button */
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+
+    /* Define animation of duplicate button on hover */
+    &::after {
+      transform: scale(1.4) scale(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* Define animation of original button on click */
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
+  }
+
+  /*
+    Create a duplicate button under the original button. We then
+    enlarge and fade the duplicate button on hover to create a
+    cool effect
+  */
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 40rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    /* Enable animation on hover and active */
+    transition: all 0.6s;
+  }
+
+  /*
+    Set color of original button and duplicate for white
+    buttons
+  */
+  &--white {
+    color: $color-grey;
+    background-color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  /* Page load animation */
+  &--animated {
+    animation: moveInBtn 0.5s ease-in 0.5s;
+    animation-fill-mode: backwards;
+  }
+}
+
+/* Text based button */
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: .3rem;
+    font-size: $default-font-size;
+
+    /* Enable animation on hover and active */
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
+    transform: translateY(0);
+  }
+}

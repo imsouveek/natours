@@ -1,0 +1,54 @@
+/* Gallery style 1 */
+.composition {
+  position: relative;
+
+  /*
+    Apply transformation on photos which are not hovered on
+    when hover is on one of the photos
+  */
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
+  }
+
+  /* Settings for all photos */
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 2.5rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+
+    /* Space between outline and element */
+    outline-offset: 1rem;
+
+    /* Position photos */
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    /* Position photos */
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    /* Position photos */
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+
+      /* Use outline instead of border because we need spacing */
+      outline: 1rem solid $color-primary;
+      transform: scale(1.05) translateY(-.5rem);
+
+      /* Bring hovered photo to top of stack */
+      z-index: 20;
+    }
+
+  }
+}

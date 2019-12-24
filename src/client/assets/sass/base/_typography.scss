@@ -1,0 +1,97 @@
+/* Body text and content settings */
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey;
+  padding: 3rem;
+}
+
+/* Heading text settings */
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+
+  /*
+    Backface visibility is a hack to prevent animation jitter in
+    child elements
+  */
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    /* Header main text animation */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    /* Header sub text animation */
+    animation: moveInRight 1s ease-in;
+  }
+}
+
+/* Settings for secondary / section headings */
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  /*
+    Don't want secondary heading to occupy full available width. This ensures
+    that the background image only exists for the actual text and not for the
+    complete row
+  */
+  display: inline-block;
+
+  /* Use a gradient background color */
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+
+  /*
+    The background is only below actual foreground text and not for entire
+    content box. We apply a transparent color to the text to only make the
+    background visible and not the foreground text
+  */
+  background-clip: text;
+  color: transparent;
+
+  /* Enable animation */
+  transition: all .2s;
+  letter-spacing: 2px;
+
+  /* Cool effect on hover */
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+/* Level 3 headings */
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
