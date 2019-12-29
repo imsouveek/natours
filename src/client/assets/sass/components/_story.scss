@@ -1,53 +1,84 @@
+// Customer stories styling
 .story {
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 2rem 4rem rgba($color-black, .2);
-  background-color: $color-white;
+  background-color: rgba($color-white,0.6);
   border-radius: 3px;
   padding: 6rem;
+
+  // Image is shifted to left by 3 rem. Hence adding extra 3 rem padding at left
   padding-left: 9rem;
   font-size: $default-font-size;
+
+  // Parallelogram style cards
   transform: skewX(-12deg);
 
+  // Styling for the figure
   &__shape {
     width: 15rem;
     height: 15rem;
+
+    // Keep image at left
     float: left;
+
+    // Ensure that customer message wraps in a circle around image
     shape-outside: circle(50% at 50% 50%);
+
+    // Show image as a circle
     clip-path: circle(50% at 50% 50%);
+
+    /*
+      Apply translateX to create distance from text. Apply skewX to 
+      correct for skew used to create parallelogram
+    */
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
   }
 
+  // Style image. Use translateX for centering
   &__img {
     height: 100%;
-    transform: translateX(-3.5rem);
+    transform: translateX(-3.5rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
   }
 
+  // Style text. Apply skew to correct for skew used for parallelogram cards
   &__text {
     transform: skewX(12deg);
   }
 
+  // Styling for figure caption
   &__caption {
+    // Center on image
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 20%);
+    text-align: center;
+    
+    // Text styling
     color: $color-white;
     text-transform: uppercase;
     font-size: 1.7rem;
-    text-align: center;
+
+    // Set up for animation during hover
     opacity: 0;
     transition: all 0.5s;
+
+    // Prevent jitter during animation
     backface-visibility: hidden;
   }
 
+  // Hover animation. Make visible and move up to position
   &:hover &__caption{
     opacity: 1;
     transform: translate(-50%, -50%);
   }
 
-  // &:hover &__img {
-
-  // }
+  &:hover &__img {
+    transform: translateX(-3.5rem) scale(1);
+    filter: blur(3px) brightness(90%);
+  }
 }

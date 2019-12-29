@@ -1,8 +1,6 @@
 extends ../partials/base.pug
 
-block body
-  include ../partials/header.pug
-
+block content
   section.section-about
     .u-center-text.u-margin-bottom-big
       h2.heading-secondary
@@ -151,6 +149,12 @@ block body
       a.btn.btn--green(href="#") Discover all tours
 
   section.section-stories
+    .bg-video
+      video.bg-video__content(autoplay muted loop)
+        source(src="../../assets/img/video.mp4" type="video/mp4")
+        source(src="../../assets/img/video.webm" type="video/webm")
+        | Your video cannot be played
+
     .u-center-text.u-margin-bottom-big
       h2.heading-secondary We Make People Genuinely Happy
 
@@ -167,7 +171,67 @@ block body
             | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
             | obcaecati, asperiores sed temporibus!
             | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    
+    .row
+      .story
+        figure.story__shape
+          img.story__img(src="../../assets/img/nat-9.jpg", alt="Person on a tour")
+          figcaption.story__caption Jack Wilson
+        .story__text
+          h3.heading-tertiary.u-margin-bottom-small Wow! My life is completely different now
+          p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            | laboriosam delectus excepturi quibusdam rerum vitae dolor illum
+            | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
+            | obcaecati, asperiores sed temporibus!
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit.
 
+    .u-center-text.u-margin-top-huge
+      a.btn-text(href="#") Read all stories &rarr;
+
+  section.section-book
+    .row
+      .book
+        .book__form
+          .u-margin-bottom-medium
+            h2.heading-secondary
+              | Start Booking Now
+
+          form.form(action="#")
+            .form__group
+              input.form__input(
+                id="name"
+                type="text"
+                placeholder="Full Name"
+                required
+                autocomplete="off"
+              )
+              label.form__label(for="name") Full Name
+
+            .form__group
+              input.form__input(
+                id="email"
+                type="email"
+                placeholder="Email Address"
+                required
+                autocomplete="off"
+              )
+              label.form__label(for="email") Email Address
+
+            .form__group.u-margin-bottom-medium
+              .form__radio-group
+                input.form__radio-input(type="radio" id="small" name="size")
+                label.form__radio-label(for="small")
+                  span.form__radio-button
+                  | Small tour group
+              .form__radio-group
+                input.form__radio-input(type="radio" id="large" name="size")
+                label.form__radio-label(for="large")
+                  span.form__radio-button
+                  | Large tour group
+
+            .form__group
+              button.btn.btn--green Next Step &rarr;
   //- include ../partials/grid.pug
 
 

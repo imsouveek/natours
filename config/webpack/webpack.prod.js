@@ -66,7 +66,8 @@ module.exports = {
           options: {
             attrs: [
               'img:src',
-              'link:href'
+              'link:href',
+              'source:src'
             ]
           }
         },

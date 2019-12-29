@@ -1,17 +1,32 @@
+/* Card Component */
 .card {
+
+  // Appear 3D during rotation
   perspective: 100rem;
   position: relative;
+
+  /*
+    Every element inside the card uses absolute positioning. This makes the
+    size of card as zero which creates a problem with alignment. Therefore,
+    setting a height on the card component
+  */
   height: 52rem;
 
+  // Styling for different sides
   &__side {
     font-size: 2rem;
     height: 52rem;
     transition: all .8s ease;
 
+    // Ensure that both front side and back side of card overlap each other
     position: absolute;
     left: 0;
     top: 0;
+    
+    // Need this to handle cases where child elements are absolute positioned
     width: 100%;
+
+    // Ensure that backside of card is hidden 
     backface-visibility: hidden;
 
     border-radius: 3px;
@@ -23,8 +38,10 @@
     }
 
     &--back {
+      // Start with back of card rotated by 180 degrees on Y axis
       transform: rotateY(180deg);
 
+      // Set colors for the three cards - card 1
       &-1 {
         background-image: linear-gradient(
           to right bottom,
@@ -33,6 +50,7 @@
         );
       }
 
+      // Set colors for the three cards - card 2
       &-2 {
         background-image: linear-gradient(
           to right bottom,
@@ -41,6 +59,7 @@
         );
       }
 
+      // Set colors for the three cards - card 3
       &-3 {
         background-image: linear-gradient(
           to right bottom,
@@ -51,22 +70,35 @@
     }
   }
 
+  // Rotate front side by 180 degrees anticlockwise on hover
   &:hover &__side--front{
     transform: rotateY(-180deg);
   }
 
+  /*
+    Back side starts with a 180 degrees rotation. Now, on hover, rotate it to
+    0 degrees to bring it in front
+  */
   &:hover &__side--back{
     transform: rotateY(0);
   }
 
+  // Styling for picture on front face
   &__picture {
     background-size: cover;
     height: 23rem;
+
+    // Blends image and gradient when showing on screen
     background-blend-mode: screen;
+
+    // Apply clipping 
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    
+    // Re-apply top borders that may be lost due to clip-path
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
 
+    // Define gradient and image for card 1
     &--1 {
       background-image: linear-gradient(
         to right bottom,
@@ -75,6 +107,7 @@
       ), url('../img/nat-5.jpg');
     }
 
+    // Define gradient and image for card 2
     &--2 {
       background-image: linear-gradient(
         to right bottom,
@@ -83,6 +116,7 @@
       ), url('../img/nat-6.jpg');
     }
 
+    // Define gradient and image for card 3
     &--3 {
       background-image: linear-gradient(
         to right bottom,
@@ -92,22 +126,32 @@
     }
   }
 
+  // Heading styles
   &__heading {
     font-size: 2.8rem;
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
     color: $color-white;
+
+    // Position for headings
     position: absolute;
     top: 12rem;
     right: 2rem;
     width: 75%;
   }
 
+  // Styling for heading text 
   &__heading-span {
     padding: 1rem 1.5rem;
+
+    /*
+      When wrapping breaks text into two or more lines, apply styling to each
+      fragment separately
+    */
     box-decoration-break: clone;
 
+    // Gradient background for heading in card 1
     &--1 {
       background-image: linear-gradient(
         to right bottom,
@@ -115,7 +159,8 @@
         rgba($color-secondary-dark, 0.85)
       );
     }
-
+    
+    // Gradient background for heading in card 2
     &--2 {
       background-image: linear-gradient(
         to right bottom,
@@ -124,6 +169,7 @@
       );
     }
 
+    // Gradient background for heading in card 3
     &--3 {
       background-image: linear-gradient(
         to right bottom,
@@ -133,6 +179,7 @@
     }
   }
 
+  // Styling for list in front face
   &__details {
     padding: 3rem;
 
@@ -153,6 +200,7 @@
     }
   }
 
+  // Styling for back face elements - Center content
   &__cta {
     position: absolute;
     top: 50%;
@@ -162,18 +210,21 @@
     text-align: center;
   }
 
+  // Styling for price box
   &__price-box {
     text-align: center;
     color: $color-white;
     margin-bottom: 8rem;
   }
 
+  // Styling for text "Only"
   &__price-only {
     font-size: 1.5rem;
     text-transform: uppercase;
 
   }
 
+  // Styling for the price amount
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
