@@ -1,5 +1,5 @@
 .btn {
-  &,
+  &, // To handle buttons created with button tags
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -34,7 +34,7 @@
 
   /* Define animation of original button on click */
   &:active, &:focus {
-    outline: none;
+    outline: none; // This is for buttons with button tag only
     transform: translateY(-.1rem);
     box-shadow: 0 .5rem 1rem rgba($color-black, 0.3);
   }
@@ -72,6 +72,7 @@
     }
   }
 
+  // Repeat for green buttons
   &--green {
     color: $color-white;
     background-color: $color-primary;
