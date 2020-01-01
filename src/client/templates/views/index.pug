@@ -1,15 +1,16 @@
 extends ../partials/base.pug
 
 block content
-  .popup
+  .popup#popup
     .popup__content
       .popup__left
         img.popup__img(src="../../assets/img/nat-8.jpg", alt="Tour photo")
         img.popup__img(src="../../assets/img/nat-9.jpg", alt="Tour photo")
 
       .popup__right
+        a.popup__close(href="#section-tours") &times;
         h2.heading-secondary.u-margin-bottom-medium Start booking now
-        h3.heading-tertiary.u-margin-bottom-small 
+        h3.heading-tertiary.u-margin-bottom-small
           | Important &ndash; Please read these terms carefully before booking
         p.popup__text
           | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -18,7 +19,7 @@ block content
           | sem viverra aliquet. Sagittis vitae et leo duis ut diam quam nulla.
           | Consectetur lorem donec massa sapien. Porttitor massa id neque
           | aliquam vestibulum morbi blandit cursus risus. Lectus proin nibh
-          | nisl condimentum id. Viverra vitae congue eu consequat ac felis. 
+          | nisl condimentum id. Viverra vitae congue eu consequat ac felis.
         a.btn.btn--green(href="#") Book Now &rarr;
 
   section.section-about
@@ -95,7 +96,7 @@ block content
             | Lorem ipsum dolor sit amet consectetur adipisicing elit.
             | Cumque, et! Quidem sunt explicabo mollitia.
 
-  section.section-tours
+  section.section-tours#section-tours
     .u-center-text.u-margin-bottom-big
       h2.heading-secondary Most Popular Tours
     .row
@@ -119,7 +120,7 @@ block content
               .card__price-box
                 .card__price-only Only
                 .card__price-value $297
-              a.btn.btn--white(href="#") Book Now
+              a.btn.btn--white(href="#popup") Book Now
 
       .col-1-of-3
         .card
@@ -141,7 +142,7 @@ block content
               .card__price-box
                 .card__price-only Only
                 .card__price-value $497
-              a.btn.btn--white(href="#") Book Now
+              a.btn.btn--white(href="#popup") Book Now
 
       .col-1-of-3
         .card
@@ -163,7 +164,7 @@ block content
               .card__price-box
                 .card__price-only Only
                 .card__price-value $897
-              a.btn.btn--white(href="#") Book Now
+              a.btn.btn--white(href="#popup") Book Now
 
     .u-center-text.u-margin-top-huge
       a.btn.btn--green(href="#") Discover all tours
@@ -191,7 +192,7 @@ block content
             | dolorum tempora sint molestias ducimus laborum culpa dicta commodi
             | obcaecati, asperiores sed temporibus!
             | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    
+
     .row
       .story
         figure.story__shape
