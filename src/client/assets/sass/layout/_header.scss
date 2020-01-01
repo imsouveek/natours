@@ -37,22 +37,10 @@
 
   /* Positioning for text box containing header text and button */
   &__text-box {
-    position: absolute;
+    // Position header text box to center
+    @include absCenter($top: 40%)
+    
     z-index: 10;
-
-    /*
-      Below two settings only set the position of the top left corner of
-      the text-box
-    */
-    top: 40%;
-    left: 50%;
-
-    /*
-      Shift text box to its left and top by 50% of its own size. This
-      has an effect similar to changing the anchor point of the text box
-      element
-    */
-    transform: translate(-50%, -50%);
 
     /* Align content of text-box to center */
     text-align: center;

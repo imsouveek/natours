@@ -1,7 +1,32 @@
+/*
+  ClearFix hack. This mixin ensures that setting a float does not set the height
+  of the parent element to zero
+*/
 @mixin clearfix {
   &::after {
     content: "";
     display: table;
     clear: both;
   }
+}
+
+/*
+  Mixin to center the elements 
+*/
+@mixin absCenter($left: 50%, $top: 50%, $translate-left: -50%, $translate-top: -50%) {
+  position: absolute;
+
+  /*
+    Below two settings only set the position of the top left corner of
+    the text-box
+  */
+  top: $top;
+  left: $left;
+
+  /*
+    Shift text box to its left and top by 50% of its own size. This
+    has an effect similar to changing the anchor point of the text box
+    element
+  */
+  transform: translate($translate-left, $translate-top);
 }

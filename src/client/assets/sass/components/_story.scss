@@ -52,10 +52,7 @@
   // Styling for figure caption
   &__caption {
     // Center on image
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 20%);
+    @include absCenter($translate-top: 20%);
     text-align: center;
     
     // Text styling
