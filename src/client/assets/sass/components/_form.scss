@@ -1,40 +1,56 @@
 .form {
 
+  // Add spacing between each form field
   &__group {
     margin-bottom: 2rem;
   }
 
+  // Styling for input boxes
   &__input {
+    display: block;
     font-size: 1.5rem;
-    font-family: inherit;
-    color: inherit;
+    width: 90%;
     padding: 1.5rem 2rem;
     border-radius: 2px;
     border: none;
     background-color: rgba($color-white, 0.5);
+
+    // Inputs don't inherit font family or color by default, so explicit setting
+    font-family: inherit;
+    color: inherit;
+
+    /*
+      Border bottom is used during :focus and :invalid. This will cause slight shifting
+      of elements unless border bottom is set here
+    */
     border-bottom: 3px solid transparent;
-    width: 90%;
-    display: block;
+
+    // Enable animations for any state changes
     transition: all 0.3s;
 
     &:focus{
+
+      // Remove outline but enable box shadow and bottom border for focus indicator
       outline: none;
       box-shadow: 0 0.5rem 1rem rgba($color-black, 0.1);
       border-bottom: 3px solid $color-primary;
 
       &:invalid {
+
+        // Show different bottom border if field fails input validation
         border-bottom: 3px solid $color-secondary-dark;
       }
 
-      
     }
 
+    // Style placeholder
     &::-webkit-input-placeholder{
       color: $color-grey-dark;
     }
 
   }
 
+  // Styling for input label
   &__label {
     font-size: 1.2rem;
     font-weight: 700;
@@ -44,6 +60,7 @@
     transition: all 0.3s;
   }
 
+  // Styling for label when field is empty, i.e, placeholder shown
   &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
@@ -51,14 +68,20 @@
   }
 
   &__radio-group {
+
+    // Make each radio button occupy 50% of available width
     width: 50%;
+
+    // Change default display behavior of div to inline-block to be on same row
     display: inline-block;
   }
 
+  // Hide original radio button. CSS styled radio buttons will be shown using label
   &__radio-input {
     display: none;
   }
-  
+
+  // Styling for radio button label
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
@@ -66,7 +89,10 @@
     padding-left: 4.5rem;
   }
 
+  // Styling for CSS styled radio buttons shown using label
   &__radio-button {
+
+    // Style the circular outline of radio button
     height: 3rem;
     width: 3rem;
     border: .5rem solid $color-primary;
@@ -77,6 +103,8 @@
     top: -0.5rem;
 
     &::after {
+
+      // Styling for filled inner circle of radio button
       @include absCenter;
       content: "";
       display: inline-block;
@@ -84,11 +112,17 @@
       width: 1.3rem;
       border-radius: 50%;
       background-color: $color-primary;
+
+      // Note: default opacity is zero
       opacity: 0;
       transition: all 0.1s;
     }
   }
 
+  /*
+    Set opacity to 1 for inner circular area of radio button only if radio button
+    itself is checked
+  */
   &__radio-input:checked ~ &__radio-label &__radio-button::after {
     opacity: 1;
   }

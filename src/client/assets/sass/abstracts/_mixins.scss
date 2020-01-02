@@ -11,7 +11,7 @@
 }
 
 /*
-  Mixin to center the elements 
+  Mixin to center the elements
 */
 @mixin absCenter($left: 50%, $top: 50%, $translate-left: -50%, $translate-top: -50%) {
   position: absolute;
@@ -29,4 +29,41 @@
     element
   */
   transform: translate($translate-left, $translate-top);
+}
+
+// Media queries
+/*
+  0 - 600 px          : Phone
+  600 - 900 px        : Tablet portrait
+  900 - 1200 px       : Tablet landscape
+  [ 1200 - 1800 px ]  : Desktop
+  1800 px +           : Big desktop
+
+  $breakpoint argument choices:-
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) { // 600 px
+      @content
+    };
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) { // 900px
+      @content
+    };
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) { // 1200px
+      @content
+    };
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) { // 1800px
+      @content
+    };
+  }
 }
