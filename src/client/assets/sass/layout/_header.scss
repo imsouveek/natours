@@ -38,8 +38,8 @@
   /* Positioning for text box containing header text and button */
   &__text-box {
     // Position header text box to center
-    @include absCenter($top: 40%)
-    
+    @include absCenter($top: 40%);
+
     z-index: 10;
 
     /* Align content of text-box to center */
