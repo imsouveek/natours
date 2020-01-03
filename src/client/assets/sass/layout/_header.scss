@@ -22,6 +22,10 @@
   /* Use header as reference for all heading related settings */
   position: relative;
 
+  @include respond(phone) {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
   /* Logo positioning */
   &__logo-box {
     position: absolute;
