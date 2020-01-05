@@ -9,6 +9,10 @@
   box-shadow: 0 1rem 2rem rgba($color-black, .3);
   transition: all 0.3s;
 
+  @include respond(tab-port) {
+    padding: 2rem;
+  }
+
   // Styling for icons in each feature
   &__icon {
     font-size: 6rem;
@@ -23,6 +27,10 @@
       $color-primary-dark
     );
     background-clip: text;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
   }
 
   // Animate to move up on hover

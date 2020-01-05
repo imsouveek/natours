@@ -14,6 +14,16 @@
   // Parallelogram style cards
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
   // Styling for the figure
   &__shape {
     width: 15rem;
@@ -29,11 +39,15 @@
     clip-path: circle(50% at 50% 50%);
 
     /*
-      Apply translateX to create distance from text. Apply skewX to 
+      Apply translateX to create distance from text. Apply skewX to
       correct for skew used to create parallelogram
     */
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   // Style image. Use translateX for centering
@@ -47,6 +61,10 @@
   // Style text. Apply skew to correct for skew used for parallelogram cards
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   // Styling for figure caption
@@ -54,7 +72,7 @@
     // Center on image
     @include absCenter($translate-top: 20%);
     text-align: center;
-    
+
     // Text styling
     color: $color-white;
     text-transform: uppercase;

@@ -54,6 +54,38 @@
   &__left {
     width: 33.33%;
     display: table-cell;
+
+    @include respond(tab-land) {
+      height: 100%;
+      background-color: orangered;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+      height: 50%;
+      position: relative;
+    }
+  }
+
+  // Set size for image
+  &__img {
+    display: block;
+    width: 100%;
+
+    @include respond(tab-land) {
+      height: 50%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+
+    @include respond(phone) {
+      height: 100%;
+      width: 50%;
+      float: left;
+    }
   }
 
   /*
@@ -66,12 +98,12 @@
     width: 66.67%;
     display: table-cell;
     vertical-align: middle;
-  }
 
-  // Set size for image
-  &__img {
-    display: block;
-    width: 100%;
+    @include respond(phone) {
+      display: block;
+      width: 100%;
+      height: 50%;
+    }
   }
 
   // Style text in right div
@@ -85,6 +117,10 @@
     column-rule: 1px solid $color-grey-light-2;
 
     hyphens: auto;
+
+    @include respond(phone) {
+      column-count: 1;
+    }
   }
 
 
