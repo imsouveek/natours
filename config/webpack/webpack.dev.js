@@ -66,12 +66,14 @@ module.exports = {
       test: /\.pug$/,
       use: [
         {
-          loader: 'html-loader',
+          loader: 'html-srcsets-loader',
           options: {
             attrs: [
               'img:src',
+              'img:srcset',
               'link:href',
-              'source:src'
+              'source:src',
+              'source:srcset'
             ]
           }
         },

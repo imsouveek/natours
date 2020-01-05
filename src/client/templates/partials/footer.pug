@@ -1,7 +1,17 @@
 block footer
   footer.footer
     .footer__logo-box
-      img.footer__logo(src="../../assets/img/logo-green-2x.png" alt="Full Logo")
+      picture.footer__logo
+        source(
+          srcset="../../assets/img/logo-green-small-1x.png 1x, ../../assets/img/logo-green-small-2x.png 2x"
+          media="(max-width: 37.5em)"
+        )
+        img(
+          srcset="../../assets/img/logo-green-1x.png 1x, ../../assets/img/logo-green-2x.png 2x"
+          alt="Full Logo"
+          src="../../assets/img/logo-green-2x.png"
+        )
+
     .row
       .col-1-of-2
         .footer__navigation
@@ -15,7 +25,7 @@ block footer
         .footer__copyright
           | Built by #[a.footer__link(href="#") Souveek Bose] for training on
           | #[a.footer__link(href="https://www.udemy.com/course/advanced-css-and-sass/" target="_blank") Advanced CSS and Sass]
-          | Copyright &copy; by Jonas Schmedtmann. You are allowed to use this 
+          | Copyright &copy; by Jonas Schmedtmann. You are allowed to use this
           | webpage for both personal and commercial use, but NOT to claim it as
-          | your own design. A credit to the original author, Jonas Schmedtmann, 
+          | your own design. A credit to the original author, Jonas Schmedtmann,
           | is of course highly appreciated
