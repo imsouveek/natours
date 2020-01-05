@@ -57,7 +57,8 @@ module.exports = {
       /*
         Pug - we are loading this using pug-plain-loader (built for VueJS)
         followed by html-loader. We can change the loader for pug here but
-        there is no need
+        there is no need. Note that we are using html-srcsets-loader because
+        html-loader does not support srcset attribute
       */
       test: /\.pug$/,
       use: [

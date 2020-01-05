@@ -61,7 +61,9 @@ module.exports = {
       /*
         Pug - we are loading this using pug-plain-loader (built for VueJS)
         followed by html-loader. Per observation, this retains hot-reload
-        functionality for pug files including inherited / included files
+        functionality for pug files including inherited / included files.
+        Also note that we are using html-srcsets-loader because html-loader
+        does not support srcset attribute
       */
       test: /\.pug$/,
       use: [

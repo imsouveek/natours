@@ -16,6 +16,12 @@
   box-sizing: inherit;
 }
 
+/*
+  Font-size of html determines the rem size in the entire html. So, to make
+  site responsive, we basically set the font-size correctly in the html. Given
+  that we are using rems for nearly all sizes in our project, much of our
+  responsiveness is achieved by this alone
+*/
 html {
   font-size: 62.5%; // 1rem = 10px; 10/16 = 62.5%
 
@@ -36,6 +42,7 @@ body {
   box-sizing: border-box;
   padding: 3rem;
 
+  // Don't waste screen real estate when its limited
   @include respond(tab-port) {
     padding: 0;
   }
