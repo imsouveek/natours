@@ -1,3 +1,16 @@
+/*
+  Define the animations. Note that this file defines the position / effects
+  at different points considering a linear timing function. However, the actual
+  timing function can be changed later which will make the animation speed up or 
+  slow down accordingly. Note that this is also the only way to apply transitions
+  or animation effects during page load (all the below effects occur only during
+  page load
+*/
+
+/*
+  Complex animation to move object in from the left. The targetted object will
+  first move slightly to the right before setting down on actual position
+*/
 @keyframes moveInLeft{
   0% {
     opacity: 0;
@@ -12,6 +25,10 @@
   }
 }
 
+/*
+  Complex animation to move object in from the right. The targetted object will
+  first move slightly to the left before settling down on actual position
+*/
 @keyframes moveInRight{
   0% {
     opacity: 0;
@@ -26,6 +43,7 @@
   }
 }
 
+// Simple animation to move up  object
 @keyframes moveInBtn {
   0% {
     opacity: 0;
@@ -37,6 +55,7 @@
   }
 }
 
+// Simple animation to make object invisible
 @keyframes makeInvisible {
   0% {
     opacity: 1;
