@@ -20,6 +20,7 @@
     padding-left: 7rem;
   }
 
+  // Don't apply correction if parallelogram containers are not used
   @include respond(phone) {
     transform: skewX(0);
   }
@@ -45,6 +46,7 @@
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
 
+    // Do not use parallelogram containers for stories for small screens
     @include respond(phone) {
       transform: translateX(-3rem) skewX(0);
     }
@@ -62,6 +64,7 @@
   &__text {
     transform: skewX(12deg);
 
+    // Don't apply correction if parallelogram containers are not used
     @include respond(phone) {
       transform: skewX(0);
     }

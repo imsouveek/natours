@@ -28,6 +28,7 @@
     // Enable animations for any state changes
     transition: all 0.3s;
 
+    // Use all available width for input text when screen is small
     @include respond(tab-port) {
       width: 100%;
     }
@@ -79,6 +80,7 @@
     // Change default display behavior of div to inline-block to be on same row
     display: inline-block;
 
+    // Put each radio button on a separate line when screen size is small
     @include respond(tab-port) {
       width: 100%;
       margin-bottom: 1rem;

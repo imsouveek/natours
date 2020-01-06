@@ -1,23 +1,35 @@
+// Use checkbox hack to show navigation but note that checkbox is always hidden
 .navigation {
   backface-visibility: hidden;
 
+  // Hide checkbox
   &__checkbox {
     display: none;
   }
 
+  // Style floating button
   &__button {
     background-color: $color-white;
+
+    // Button sizing
     height: 7rem;
     width: 7rem;
+
+    // Button position
     position: fixed;
     top: 6rem;
     right: 6rem;
+
+    // Circular button
     border-radius: 50%;
+
+    // Button should be above all other elements in html
     z-index: 2000;
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     text-align: center;
     cursor: pointer;
 
+    // Adjust position of button for smaller screens
     @include respond(tab-port) {
       top: 4rem;
       right: 4rem;
@@ -29,20 +41,31 @@
     }
   }
 
+  /*
+    Keep a circular background behind the button and expand it to show navigation
+    menu over a gradient background when required
+  */
   &__background {
+
+    // Background size
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
+
+    // Background position
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
     z-index: 1000;
+
+    // Background gradient
     background-image: radial-gradient(
       $color-primary-light,
       $color-primary-dark
     );
     transition: transform .8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
+    // Adjust position of background for smaller screens
     @include respond(tab-port) {
       top: 4.5rem;
       right: 4.5rem;
@@ -54,6 +77,7 @@
     }
   }
 
+  // Style the div containing the navigation links
   &__nav {
     height: 100vh;
     position: fixed;
@@ -61,6 +85,7 @@
     right: 0;
     z-index: 1500;
 
+    // Initially the div should not show at all
     opacity: 0;
     width: 0;
     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -78,6 +103,7 @@
     text-align: center;
   }
 
+  // Style each navigation link
   &__link {
     &:link,
     &:visited {
@@ -98,6 +124,7 @@
       transition: all 0.4s;
     }
 
+    // Use background position to move background to create a cool effect
     &:hover,
     &:active {
       background-position: 100%;
@@ -106,19 +133,23 @@
     }
   }
 
+  // Make button background fit full screen if checkbox is checked
   &__checkbox:checked ~ &__background {
     transform: scale(57);
   }
 
+  // Make div with navigation link visible only if checkbox is checked
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
   }
 
+  // New example of checkbox hack - icon for navigation button
   &__icon {
     position: relative;
     margin-top: 3.5rem;
 
+    // Create 3 lines at equal distance from one another
     &,
     &::before,
     &::after {
@@ -145,6 +176,7 @@
     }
   }
 
+  // When hover the 3 lines in icon move apart slightly
   &__button:hover &__icon::before {
     top: -1rem;
   }
@@ -153,10 +185,12 @@
     top: 1rem;
   }
 
+  // When chekbox is checked, middle line becomes invisible
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;
   }
 
+  // When chekbox is checked, top and bottom lines are rotated to a cross
   &__checkbox:checked + &__button &__icon::before {
     top: 0;
     transform: rotate(135deg);

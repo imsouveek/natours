@@ -1,6 +1,7 @@
 /*
   Utility classes. Note the use of !important to ensure that the settings
-  are honored
+  are honored. Also, we are using media queries to ensure that there are
+  smaller empty spaces on smaller screens
 */
 .u-center-text {
   text-align: center !important;

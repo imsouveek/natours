@@ -44,6 +44,8 @@
     - tab-port
     - tab-land
     - big-desktop
+
+  @content allows content to be passed when including the mixin
 */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {

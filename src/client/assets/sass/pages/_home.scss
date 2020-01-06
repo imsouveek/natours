@@ -9,6 +9,7 @@
   */
   margin-top: -20vh;
 
+  // Reduce empty space in about section for small screens
   @include respond(tab-port) {
     padding: 20rem 0;
   }
@@ -25,13 +26,19 @@
     url('../img/nat-4.jpg');
   background-size: cover;
 
+  // Skew entire section to create the angular section
   transform: skewY(-7deg);
   margin-top: -15rem;
 
+  /*
+    Apply opposite skew to each child element to ensure that text is not
+    skewed
+  */
   & > * {
     transform: skewY(7deg);
   }
 
+  // Reduce empty spaces for smaller screens
   @include respond(tab-port) {
     padding: 10rem 0;
   }
@@ -42,6 +49,7 @@
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
 
+  // Reduce empty spaces for smaller screens
   @include respond(tab-port) {
     padding: 20rem 0 10rem 0;
   }
@@ -51,6 +59,7 @@
   padding: 15rem 0;
   position: relative;
 
+  // Reduce empty spaces for smaller screens
   @include respond(tab-port) {
     padding: 10rem 0;
   }
@@ -78,6 +87,7 @@
   border-radius: 3px;
   box-shadow: 0 1rem 2rem rgba($color-black, .3);
 
+  // Occupy more space for form for smaller screens
   @include respond(tab-land) {
     background-image:
     linear-gradient(
@@ -91,6 +101,7 @@
 
   }
 
+  // Occupy entire width available for very small screens
   @include respond(tab-port) {
     background-image:
     linear-gradient(
@@ -105,6 +116,7 @@
     width: 50%;
     padding: 6rem;
 
+    // Adjust form width based on screen size
     @include respond(tab-land) {
       width: 65%;
     }

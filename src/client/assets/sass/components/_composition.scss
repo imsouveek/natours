@@ -22,11 +22,11 @@
     /* Space between outline and element */
     outline-offset: 1rem;
 
+    // Adjust image layout sizes for smaller screens
     @include respond(tab-port) {
       float: left;
       position: relative;
       width: 33.33%;
-
     }
 
     /* Position photos */

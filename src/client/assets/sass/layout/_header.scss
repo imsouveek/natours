@@ -22,6 +22,9 @@
   /* Use header as reference for all heading related settings */
   position: relative;
 
+  /*
+    Use low resolution picture only if viewport width < 2000px or if screen is small and has low resoluton
+  */
   @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     background-image:
     linear-gradient(

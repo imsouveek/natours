@@ -3,6 +3,7 @@
   padding: 10rem 0;
   font-size: 1.4rem;
 
+  // Reduce empty space in footer for small screens
   @include respond(tab-port) {
     padding: 8rem 0;
   }
@@ -20,11 +21,13 @@
     width: 15rem;
   }
 
+  // Navigation section in footer
   &__navigation {
     border-top: 1px solid $color-grey;
     padding-top: 2rem;
     display: inline-block;
 
+    // Use 100% of available space when screens are smaller
     @include respond(tab-port) {
       width: 100%;
       text-align: center;
@@ -32,10 +35,12 @@
 
   }
 
+  // Don't show markers for list of nav links
   &__list {
     list-style: none;
   }
 
+  // Show nav links in footer next to each other
   &__item{
     display: inline-block;
 
@@ -44,6 +49,7 @@
     }
   }
 
+  // Styling for links in footer
   &__link {
     &:link,
     &:visited {
@@ -63,12 +69,14 @@
     }
   }
 
+  // Styling for copyright section
   &__copyright {
     border-top: 1px solid $color-grey;
     padding-top: 2rem;
     width: 85%;
     float: right;
 
+    // Use all available space for small screens
     @include respond(tab-port) {
       width: 100%;
       float: none;

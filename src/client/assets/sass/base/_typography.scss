@@ -29,7 +29,7 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-in;
 
-    // Small changes for phones
+    // Use smaller fonts and spacing for smaller screens
     @include respond(phone) {
       letter-spacing: 1rem;
       font-family: 5rem;
@@ -46,7 +46,7 @@ body {
     /* Header sub text animation */
     animation: moveInRight 1s ease-in;
 
-    // Small changes for phones
+    // Use smaller spacing for smaller screens
     @include respond(phone) {
       letter-spacing: 0.5rem;
     }
@@ -91,7 +91,7 @@ body {
     text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
   }
 
-  // Media queries to adjust secondary heading on smaller screens
+  // Use smaller font sizes in secondary heading on smaller screens
   @include respond(tab-port) {
     font-size: 3rem;
   }

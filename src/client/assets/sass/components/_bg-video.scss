@@ -14,7 +14,7 @@
     height: 100%;
     width: 100%;
 
-    // Similar to background-size but works on videos
+    // Maintain aspect ratios but fill the container
     object-fit: cover;
   }
 }

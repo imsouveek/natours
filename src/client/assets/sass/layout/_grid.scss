@@ -1,12 +1,15 @@
+// Grid classes for help with layout
 .row {
   max-width: $grid-width;
   margin: 0 auto;
 
+  // Change grid for smaller screens
   @include respond(tab-port) {
     max-width: 50rem;
     padding: 0 3rem;
   }
 
+  // Show a vertical gap between rows
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
 
@@ -15,11 +18,14 @@
     }
   }
 
+  // Since we are using float based layout, we need clearfix hack
   @include clearfix;
 
+  // Put each row content side by side
   [class^="col-"] {
     float: left;
 
+    // Add space between row contents except for last column
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
 
@@ -29,11 +35,13 @@
       }
     }
 
+    // For smaller screens make each column a new row
     @include respond(tab-port) {
       width: 100% !important;
     }
   }
 
+  // Computed column widths for all grid layouts
   .col-1-of-2 {
     width: calc((100% - #{$gutter-horizontal})/2);
 

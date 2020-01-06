@@ -55,17 +55,17 @@
     width: 33.33%;
     display: table-cell;
 
-    @include respond(tab-land) {
-      height: 100%;
-      background-color: orangered;
-      overflow: hidden;
-      position: absolute;
-    }
+    // Use all available height when screen sizes are below threshold
+    height: 100%;
 
+    // Position absolute helps with using popup height when setting left section height
+    position: absolute;
+
+    // Show popup left and right sections as rows for very small screens
     @include respond(phone) {
       width: 100%;
       display: block;
-      height: 50%;
+      height: 18.5rem;
       position: relative;
     }
   }
@@ -75,12 +75,13 @@
     display: block;
     width: 100%;
 
-    @include respond(tab-land) {
-      height: 50%;
-      object-fit: cover;
-      overflow: hidden;
-    }
+    // Use 50% of left section height for each image
+    height: 50%;
 
+    // Main image aspect ratios and crop as required
+    object-fit: cover;
+
+    // Show images side by side if screen size is small
     @include respond(phone) {
       height: 100%;
       width: 50%;
@@ -99,10 +100,11 @@
     display: table-cell;
     vertical-align: middle;
 
+    // Use full width and reduce empty spacing around text for small screens
     @include respond(phone) {
       display: block;
       width: 100%;
-      height: 50%;
+      padding: 1rem 2rem;
     }
   }
 
@@ -118,6 +120,7 @@
 
     hyphens: auto;
 
+    // Don't use 2 column layout for small screens
     @include respond(phone) {
       column-count: 1;
     }
