@@ -233,9 +233,12 @@
   /*
     With tab port, we are using one card per row, and the targetted device may
     not have a hover event (if it has touch screen) so need to ensure that funky
-    rotation animation is not happening
+    rotation animation is not happening. Note that for checking availability of
+    hover, we cannot use the respond mixin here
   */
-  @include respond(tab-port) {
+  // @include respond(tab-port)
+  @media only screen and (max-width: 56.25em),
+        only screen and (hover: none){
 
     height: auto;
     border-radius: 3px;

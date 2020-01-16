@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  height: 75vh;
 
   /* Put overlapping gradient and image for a cool background */
   background-image:
@@ -16,17 +16,20 @@
   /* Align to top and crop bottom on viewport resize if required */
   background-position: top;
 
-  /* Polygon style header */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   /* Use header as reference for all heading related settings */
   position: relative;
 
+  @supports(clip-path: polygon(0 0)) {
+    /* Polygon style header */
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
   /*
     Use low resolution picture only if viewport width < 2000px or if screen is
     small and has low resoluton
   */
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     background-image:
     linear-gradient(
       to right bottom,

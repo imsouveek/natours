@@ -29,15 +29,21 @@
   &__shape {
     width: 15rem;
     height: 15rem;
+    overflow: hidden;
+    border-radius: 50%;
 
     // Keep image at left
     float: left;
 
-    // Ensure that customer message wraps in a circle around image
-    shape-outside: circle(50% at 50% 50%);
+    @supports (clip-path: polygon(0 0)) {
+      // Show image as a circle
+      clip-path: circle(50% at 50% 50%);
 
-    // Show image as a circle
-    clip-path: circle(50% at 50% 50%);
+      // Ensure that customer message wraps in a circle around image
+      shape-outside: circle(50% at 50% 50%);
+
+      border-radius: none;
+    }
 
     /*
       Apply translateX to create distance from text. Apply skewX to
